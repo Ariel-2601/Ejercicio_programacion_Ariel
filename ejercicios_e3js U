@@ -1,0 +1,79 @@
+const universidad = {
+  nombre: "Universidad Central",
+  ubicacion: {
+    ciudad: "Sevilla",
+    direccion: {
+      calle: "Av. Principal",
+      numero: 123
+    }
+  },
+  facultades: [
+    {
+      nombre: "Ingeniería",
+      carreras: [
+        {
+          nombre: "Informática",
+          estudiantes: [
+            { nombre: "Laura", edad: 20, hobbies: ["programar", "ajedrez"] },
+            { nombre: "Javier", edad: 22, hobbies: ["fútbol", "cine"] }
+          ]
+        },
+        {
+          nombre: "Civil",
+          estudiantes: [
+            { nombre: "Sofía", edad: 21, hobbies: ["fotografía", "leer"] }
+          ]
+        }
+      ]
+    },
+    {
+      nombre: "Derecho",
+      carreras: [
+        {
+          nombre: "Derecho Penal",
+          estudiantes: [
+            { nombre: "Andrés", edad: 23, hobbies: ["debate", "natación"] }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// a) Muestra el nombre de la universidad
+const mostrarUniversidad = universidad => console.log("Universidad:", universidad.nombre);
+
+// b) Muestra la calle donde está ubicada
+const mostrarCalle = universidad => console.log("Calle:", universidad.ubicacion.direccion.calle);
+
+// c) Muestra el nombre de la primera facultad
+const mostrarPrimeraFacultad = universidad => console.log("Primera Facultad:", universidad.facultades[0].nombre);
+
+// d) Muestra el nombre de la segunda carrera en la primera facultad
+const mostrarSegundaCarrera = universidad => console.log("Segunda carrera:", universidad.facultades[0].carreras[1].nombre);
+
+// e) Muestra el nombre del primer estudiante de la carrera de Informática
+const mostrarPrimerEstudianteInformatica = universidad =>
+  console.log("Primer estudiante de Informática:", universidad.facultades[0].carreras[0].estudiantes[0].nombre);
+
+// f) Muestra el segundo hobby de Laura
+const mostrarSegundoHobbyLaura = universidad =>
+  console.log("Segundo hobby de Laura:", universidad.facultades[0].carreras[0].estudiantes[0].hobbies[1]);
+
+// g) Muestra la edad de Sofía
+const mostrarEdadSofia = universidad =>
+  console.log("Edad de Sofía:", universidad.facultades[0].carreras[1].estudiantes[0].edad);
+
+// h) Muestra el primer hobby del estudiante de Derecho Penal
+const mostrarHobbyDerechoPenal = universidad =>
+  console.log("Hobby estudiante de Derecho Penal:", universidad.facultades[1].carreras[0].estudiantes[0].hobbies[0]);
+
+
+mostrarUniversidad(universidad);
+mostrarCalle(universidad);
+mostrarPrimeraFacultad(universidad);
+mostrarSegundaCarrera(universidad);
+mostrarPrimerEstudianteInformatica(universidad);
+mostrarSegundoHobbyLaura(universidad);
+mostrarEdadSofia(universidad);
+mostrarHobbyDerechoPenal(universidad);
