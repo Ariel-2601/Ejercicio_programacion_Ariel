@@ -1,7 +1,3 @@
-
-// ejercicios_e5.js
-// Ejemplos de Arreglos en JavaScript - Programación Estructurada E5
-
 // 1. Declaración de arreglos
 let arreglo1 = [1, 2, 3, "texto", true];
 let arreglo2 = new Array(1, 2, 3);
@@ -41,7 +37,7 @@ arreglo.length = 5;
 console.log("length extendido:", arreglo);
 
 // 8. sort()
-let numerosSort = [3, 1, 4, 2];
+letnumerosSort  = [3, 1, 4, 2];
 numerosSort.sort((a, b) => a - b);
 console.log("sort ascendente:", numerosSort);
 
