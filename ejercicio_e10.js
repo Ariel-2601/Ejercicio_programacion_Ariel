@@ -15,7 +15,7 @@ const partidos = [
     Sanfernando: 3
   },
   {
-    juego: 4,
+    juego: 4, 
     lostoros: 6,
     Sanfernando: 7
   },
@@ -43,6 +43,11 @@ for (let i = 0; i < numPartidos.length; i++) {
   const p = partidos.shift();
   console.log(`resultado del partido ${p.juego}:Los Toros ${p.lostoros} - San Fernando ${p.Sanfernando}`);  
 }
+
+partidos.forEach((partido) => {
+  let p = partidos.shift();
+  console.log(`resultado del partido ${p.juego}:Los Toros ${p.lostoros} - San Fernando ${p.Sanfernando}`);
+});
 
 console.log("partidos:", partidos);
 

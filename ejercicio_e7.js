@@ -1,41 +1,104 @@
-// 1. Crear una función flecha que reciba un arreglo y uno o más elementos, los añada al final del arreglo y devuelva el nuevo arreglo.
-const addToEnd = (arr, ...elements) => [...arr, ...elements];
+// 1. Añadir elementos al final
+const agregarAlFinal = (arreglo, ...elementos) => {
+    arreglo.push(elementos);
+    return arreglo;
+};
+let numeros = [1, 2, 3];
+console.log(agregarAlFinal(numeros, 4)); // [1, 2, 3, 4, 5]
 
-// 2. Crear una función flecha que reciba un arreglo y uno o más elementos, los añada al inicio del arreglo y devuelva el nuevo arreglo.
-const addToStart = (arr, ...elements) => [...elements, ...arr];
+// 2. Añadir elementos al inicio
+const agregarAlInicio = (arreglo, ...elementos) => {
+    arreglo.unshift(elementos);
+    return arreglo;
+};
+let numeros2 = [1, 2, 3];
+console.log(agregarAlInicio(numeros2, 0)); // [0, 1, 2, 3, 4, 5
 
-// 3. Crear una función flecha que reciba un arreglo, elimine y devuelva el último elemento del arreglo.
-const removeLastElement = arr => {
-const [, ...rest] = arr;
-return rest;
+// 3. Eliminar el último elemento
+const eliminarUltimo = (arreglo) => {
+    ultimo= arreglo.pop();
+    return ultimo;
 };
 
-// 4. Crear una función flecha que reciba un arreglo, elimine y devuelva el primer elemento del arreglo.
-const removeFirstElement = arr => arr.slice(1);
+let numeros3 = [1, 2, 3];
+console.log(eliminarUltimo(numeros3)); // 3
 
-// 5. Crear una función flecha que reciba un arreglo, un elemento y opcionalmente un índice de inicio, y devuelva el índice de la primera aparición del elemento o -1 si no lo encuentra.
-const findIndex = (arr, element, startIndex = 0) => arr.indexOf(element, startIndex);
+// 4. Eliminar el primer elemento
+const eliminarPrimero = (arreglo) => {
+    primero= arreglo.shift();
+    return primero;
+};
 
-// 6. Crear una función flecha que reciba un arreglo y devuelva la cantidad de elementos en el arreglo.
-const getLength = arr => arr.length;
+let numeros4 = [1, 2, 3];
+console.log(eliminarPrimero(numeros4)); // 1
 
-// 7. Crear una función flecha que reciba un arreglo de números y los ordene en orden ascendente usando una función comparadora.
-const sortAscending = arr => arr.sort((a, b) => a - b);
+// 5. Buscar el índice de un elemento
+const buscarIndice = (arreglo, elemento) => {
+    return arreglo.indexOf(elemento);
+};
 
-// 8. Crear una función flecha que reciba un arreglo y un separador, y devuelva una cadena con los elementos del arreglo unidos por el separador.
-const joinWithSeparator = (arr, separator) => arr.join(separator);
+let numeros5 = [1, 2, 3];
+console.log(buscarIndice(numeros5, 2)); // 1
 
-// 9. Crear una función flecha que reciba uno o más arreglos y/o elementos, y devuelva un nuevo arreglo con todos los elementos combinados.
-const concatArrays = (...items) => items.reduce((acc, item) => acc.concat(item), []);
+// 6. Contar elementos
+const contarElementos = (arreglo) => {
+    return arreglo.length;
+};
 
-// 10. Crear una función flecha que reciba un arreglo y una función callback, y ejecute la función por cada elemento del arreglo sin devolver un nuevo arreglo.
-const forEach = (arr, callback) => arr.forEach(callback);
+let numeros6 = [1, 2, 3];
+console.log(contarElementos(numeros6)); // 3
+// 7. Ordenar elementos
+const ordenarElementos = (arreglo) => {
+    return arreglo.sort((a, b) => a - b);
+};
 
-// 11. Crear una función flecha que reciba un arreglo y una función callback, y devuelva un nuevo arreglo con los resultados de aplicar la función a cada elemento.
-const map = (arr, callback) => arr.map(callback);
+let numeros7 = [3, 1, 2];
+console.log(ordenarElementos(numeros7)); // [1, 2, 3]
 
-// 12. Crear una función flecha que reciba un arreglo y una función callback, y devuelva un nuevo arreglo con los elementos que cumplen la condición definida por la función.
-const filter = (arr, callback) => arr.filter(callback);
+// 8. Unir elementos
+const unirElementos = (arreglo, separador) => {
+    return arreglo.join(separador);
+};
 
-// 13. Crear una función flecha que reciba un arreglo, una función callback y opcionalmente un valor inicial, y reduzca el arreglo a un solo valor aplicando la función acumuladora.
-const reduce = (arr, callback, initialValue) => arr.reduce(callback, initialValue);
+let palabras = ['Hola', 'mundo'];
+console.log(unirElementos(palabras, ' ')); // "Hola mundo"
+
+// 9. Combinar arreglos y elementos
+const combinarArreglos = (arreglo1, arreglo2, ...elementos) => {
+    return [...arreglo1, ...arreglo2, ...elementos];
+};
+
+let numeros8 = [1, 2];
+let numeros9 = [3, 4];
+console.log(combinarArreglos(numeros8, numeros9, 5, 6)); // [1, 2, 3, 4, 5, 6]
+
+// 10. Ejecutar función sin retorno
+const ejecutarSinRetorno = (arreglo, callback) => {
+    arreglo.forEach(callback);
+};
+
+let numeros10 = [1, 2, 3];
+ejecutarSinRetorno(numeros10, (num) => console.log(num * 2)); // 2, 4, 6
+// 11. Ejecutar función y devolver resultados
+const ejecutarConRetorno = (arreglo, callback) => {
+    return arreglo.map(callback);
+};
+
+let numeros11 = [1, 2, 3];
+console.log(ejecutarConRetorno(numeros11, (num) => num * 2)); // [2, 4, 6]
+
+// 12. Filtrar elementos
+const filtrarElementos = (arreglo, callback) => {
+    return arreglo.filter(callback);
+};
+
+let numeros12 = [1, 2, 3, 4, 5];
+console.log(filtrarElementos(numeros12, (num) => num > 2)); // [3, 4, 5]
+
+// 13. Reducir arreglo a un solo valor
+const reducirArreglo = (arreglo, callback, valorInicial) => {
+    return arreglo.reduce(callback, valorInicial);
+};
+
+let numeros13 = [1, 2, 3, 4];
+console.log(reducirArreglo(numeros13, (acum, num) => acum + num, 0)); // 10

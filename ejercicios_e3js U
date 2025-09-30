@@ -76,4 +76,4 @@ mostrarSegundaCarrera(universidad);
 mostrarPrimerEstudianteInformatica(universidad);
 mostrarSegundoHobbyLaura(universidad);
 mostrarEdadSofia(universidad);
-mostrarHobbyDerechoPenal(universidad);
+mostrarHobbyDerechoPenal(universidad);  

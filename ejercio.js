@@ -1,4 +1,4 @@
-//Declara una variable nombre y asígnale tu nomb re. Muestra su valor enconsola.
+//Declara una variable nombre y asígnale tu nombre. Muestra su valor enconsola.
 let Nombre = "Carlos"
 console.log (Nombre);
 
@@ -71,9 +71,9 @@ for (let i = 1; i <= 10; i++) {
 
 //Usando un while, muestra en consola los números pares del 2 al 20.
 let num = 2;
-while (num <= 20) {
+while (num <= 20) { 
     console.log(num);
-    num += 2;
+    num += 2; 
 }
 
 //Crea una función saludar que reciba un nombre y muestre un saludo.
@@ -116,7 +116,7 @@ console.log("25 grados Celsius son " + fahrenheit + " grados Fahrenheit.");
 
 //Crea una función flecha mayorDeDos que reciba dos números y retorne el mayor.
 const mayorDeDos = (a, b) => (a > b ? a : b);
-let mayor = mayorDeDos(10, 20);
+let mayor = mayorDeDos(10, 20); 
 console.log("El mayor es: " + mayor);
 
 //Crea una función flecha calcularIVA que reciba un precio y retorne el precio más IVA (15%).
